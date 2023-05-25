@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
-        
+        let myLocation = prompt("Enter your location");
+        // change the string into lowercase
+        let lowercaseLocation = myLocation.toLowerCase();
+
+        if(lowercaseLocation == ""){
+            alert("Enter any valid location!!");
+        }
+        else if(lowercaseLocation != "dhaka"){
+            alert("Delivery charge is 120tk.")
+        }
+        else{
+            alert("Delivery charge is 60tk.");
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Converstion Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <h2 class="text-center">Converstion Calculator</h2>
+            <div class="col-md-6 offset-md-3 mb-2">
+                <div class="input-group mb-3">
+                    <input onchange=convert() type="number" id="inputValue" class="form-control" placeholder="Enter Celcious value">
+                    <!-- <button  class="btn btn-primary" type="button" id="button-addon2">Convert</button> -->
+                  </div>                  
+            </div>
+
+            <div class="col-md-4 offset-md-2 text-center mb-2">
+                <div class="custom-block">
+                    <p>Farenheit Scale</p>
+                    <p id="farenheit-data">0</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center mb-2">
+                <div class="custom-block">
+                    <p>Kelvin Scale</p>
+                    <p id="kelvin-data">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- custom css here -->
+    <style>
+        /*
+        Linear background code
+        source : uigradients.com
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            font-family: 'Roboto';
+            color: #fff;
+            background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        .custom-block {
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            border-radius: 1rem;
+            box-shadow: 15px 15px 15px -3px rgba(0,0,0,0.1);
+            background-color: #f3f4f6;
+            color: #000;
+            height: 10em;
+            padding: 25px 20px 0px 20px;
+        }
+    </style>
+
+    <!-- js source here -->
+    <script src="./js/convert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

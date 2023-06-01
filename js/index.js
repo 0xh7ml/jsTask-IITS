@@ -1,18 +1,10 @@
-let myName = "abcABC";
-
-let length = myName.length;
-let lowercaseCount = 0;
-let uppercaseCount = 0;
-
-for (let i = 0; i < length; i++) {
-    if(myName[i] >= 'a' && myName[i] <= 'z'){
-        lowercaseCount++;
+let n = 5;
+let myString = "";
+// external loop
+for(let i=1; i<n+1; i++){
+    for(let j=1; j<i+1; j++){
+        myString += j;
     }
-    if(myName[i] >= 'A' && myName[i] <= 'Z'){
-        uppercaseCount++;
-    }
+    myString += "\n";
 }
-
-console.log('length is', length);
-console.log('Total lowercase', lowercaseCount);
-console.log('Total uppercase', uppercaseCount);
+console.log(myString);

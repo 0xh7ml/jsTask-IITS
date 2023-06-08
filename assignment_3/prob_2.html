@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const cars = [
+            {
+                carId: 1,
+                name: "Nissan GTR",
+                type: "sports",
+                made_by: "nissan",
+                rating: 9.5
+            },
+
+            {
+                carId: 2,
+                name: "Toyota Supra",
+                type: "sports",
+                made_by: "toyota",
+                rating: 10
+            },
+
+            {
+                carId: 3,
+                name: "Ford Mustang",
+                type: "muscle",
+                made_by: "ford",
+                rating: 9.5
+            }
+        ]
+
+        // get car name using one type property as a function
+        cars.forEach(car =>{
+            if(car.type === "sports"){
+                console.log(car.name);
+            }
+        });
+    </script>
+</body>
+
+</html>

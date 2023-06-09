@@ -10,38 +10,16 @@
 
 <body>
     <script>
-        const cars = [
+        // declaring an array with car object
+        const cars = 
             {
                 carId: 1,
                 name: "Nissan GTR",
                 type: "sports",
                 made_by: "nissan",
-                rating: 9.5
-            },
-
-            {
-                carId: 2,
-                name: "Toyota Supra",
-                type: "sports",
-                made_by: "toyota",
-                rating: 10
-            },
-
-            {
-                carId: 3,
-                name: "Ford Mustang",
-                type: "muscle",
-                made_by: "ford",
-                rating: 9.5
-            }
-        ]
-
-        // get car name using one type property as a function
-        cars.forEach(car =>{
-            if(car.type === "sports"){
-                console.log(car.name);
-            }
-        });
+                modelName: function(){ return this.name;}
+            };
+        console.log(cars.modelName());
     </script>
 </body>
 

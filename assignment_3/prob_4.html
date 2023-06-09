@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // declaring an array with book object
+        const books = [
+            {
+                bookId: 1,
+                name: "Programming C",
+                author: "Subin Shahriar",
+                rating: 5,
+                price: 150
+            },
+            {
+                bookId: 2,
+                name: "Coding Interview",
+                author: "Subin Shahriar",
+                rating: 5,
+                price: 160
+            },
+            {
+                bookId: 3,
+                name: "Unga Bunga",
+                author: "Md Saikat",
+                rating: 5,
+                price: 1000
+            }
+        ]
+
+        // now get the book details using foreach / for loop or any other array method
+        books.forEach(book => {
+            console.log(book);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> click here  </h2>
+        <ul id="demo"></ul>
+    <button type="submit" id="search">Click here</button>
+    <script>
+        const searchButton = document.getElementById('search');
+        const demoContainer = document.getElementById('demo');
+
+        searchButton.addEventListener('click', ()=>{
+            fetch('/logs')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(car => {
+                    const carName = car.name;
+                    const carHp = car.hp;
+                    const showData = document.createElement('li');
+                    showData.textContent = carName+' - '+ carHp;
+                    demoContainer.appendChild(showData)
+                });
+            })
+        });
+    </script>
+</body>
+</html>

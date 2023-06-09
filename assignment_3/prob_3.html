@@ -7,6 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        // defining an array
+        const array = [10,12,14,2,10,5,2]
+        let findValue = 22
+
+        // now find the 22 from the array
+
+        //method 1: indexof
+        console.log(array.indexOf(findValue));
+
+        //method 2: includes
+        console.log(array.includes(findValue));
+
+        //method 3: foreach
+        array.forEach(e => {
+            if(e === findValue){
+                console.log("Found");
+            }
+            else{
+                console.log("Not Found");
+            }
+        });
+    </script>
 </body>
 </html>

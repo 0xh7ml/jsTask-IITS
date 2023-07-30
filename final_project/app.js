@@ -85,10 +85,12 @@ searchForm.addEventListener("submit", (e) => {
   foodItems.forEach((foodItem) => {
     const foodItemName = foodItem.querySelector(".card-title").textContent.toLowerCase();
     const foodItemType = foodItem.querySelector(".category-pill").textContent.toLowerCase();
-    if (foodItemName.includes(searchValue) || foodItemType.includes(searchValue)) {
-      foodItem.classList.remove("d-none");
-    } else {
-      foodItem.classList.add("d-none");
+    if(!(foodItemName.includes(searchValue) || foodItemType.includes(searchValue))){
+      foodItem.classList.add('d-none');
     }
+    else{
+      foodItem.classList.remove('d-none');
+    }
+    //console.log(!(foodItemName.includes(searchValue) || foodItemType.includes(searchValue)));
   });
 });

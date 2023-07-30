@@ -27,7 +27,7 @@ adminBtn.addEventListener('click', () => {
 
         // listening close button click event
         closeBtn.addEventListener('click', () => {
-            adminSection.classList.toggle('d-none');
+            adminSection.classList.add('d-none');
         });
     }
     else {
@@ -35,21 +35,18 @@ adminBtn.addEventListener('click', () => {
     }
 });
 
-// fetch items from api 
-
 let requestOptions = {
-    method: 'GET'
+  method: 'GET'
 };
 
 fetch("https://64b2e33138e74e386d55b072.mockapi.io/api/hanover", requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(item => {
-            showItems(item);
-        });
-    })
-    .catch(error => console.log('error', error));
-
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(items => {
+      showItems(items);
+    });
+  })
+  .catch(error => console.log('error', error));
 
 // new function to show the all items
 function showItems(items) {
@@ -61,18 +58,37 @@ function showItems(items) {
         <span class="category-pill">${items.type}</span>
       </div>
       <div class="card-body">
-        <h5 class="card-title">${(items.name)}</h5>
-        <p class="card-text">${(items.desc)}</p>
+        <h5 class="card-title">${items.name}</h5>
+        <p class="card-text">${items.desc}</p>
         <button id="addToCartBtn" class="addToCartBtn btn w-100">Add to cart</button>
       </div>
     </div>
   </div>`;
-  document.querySelector('#iits-items').insertAdjacentHTML('beforeend', markup);
+  document.querySelector('#iits-items').innerHTML += markup;
 }
 
 
-// cart button code here
-let cartButton = document.getElementById('addToCartBtn');
-cartButton.addEventListener('click', ()=>{
-  console.log('click');
+// cart function goes here 
+
+
+
+// search variables goes here
+const searchForm = document.getElementById("searchForm");
+const searchBox = document.getElementById("iits-searchBox");
+
+// search action goes here
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchValue = searchBox.value.toLowerCase();
+  const foodItems = document.querySelectorAll(".item");
+
+  foodItems.forEach((foodItem) => {
+    const foodItemName = foodItem.querySelector(".card-title").textContent.toLowerCase();
+    const foodItemType = foodItem.querySelector(".category-pill").textContent.toLowerCase();
+    if (foodItemName.includes(searchValue) || foodItemType.includes(searchValue)) {
+      foodItem.classList.remove("d-none");
+    } else {
+      foodItem.classList.add("d-none");
+    }
+  });
 });

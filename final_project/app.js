@@ -85,12 +85,34 @@ searchForm.addEventListener("submit", (e) => {
   foodItems.forEach((foodItem) => {
     const foodItemName = foodItem.querySelector(".card-title").textContent.toLowerCase();
     const foodItemType = foodItem.querySelector(".category-pill").textContent.toLowerCase();
+    
+    // check the search value match or not
+    // if doesn't match then add d-none class to the item
+    // else remove the d-none class to show the item
     if(!(foodItemName.includes(searchValue) || foodItemType.includes(searchValue))){
       foodItem.classList.add('d-none');
     }
     else{
       foodItem.classList.remove('d-none');
     }
-    //console.log(!(foodItemName.includes(searchValue) || foodItemType.includes(searchValue)));
+  });
+});
+
+// Filter functionality goes here
+const radioBtns = document.querySelectorAll('.form-check-input');
+radioBtns.forEach((radioBtn) => {
+  radioBtn.addEventListener("change", () => {
+    const selectedCat = radioBtn.value;
+    // all items
+    const foodItems = document.querySelectorAll(".item");
+    foodItems.forEach((foodItem) => {
+      const itemCategory = foodItem.getAttribute("data-category");
+
+      if (selectedCat === "all" || itemCategory === selectedCat) {
+        foodItem.classList.remove("d-none");
+      } else {
+        foodItem.classList.add("d-none");
+      }
+    });
   });
 });
